@@ -1,15 +1,21 @@
 import { stackflow, useActions, useStepActions } from "@stackflow/react";
 import { basicRendererPlugin } from "@stackflow/plugin-renderer-basic";
 import { basicUIPlugin } from "@stackflow/plugin-basic-ui";
-import { JobsListPage } from "../../components/jobAritcles/pages/JobsListPage";
-import { JobsArticleDetailPage } from "../../components/jobArticleDetail/pages/JobsArticleDetailPage";
+import {
+  ItemDetailPage,
+  ItemUploadPage,
+  ItemListPage,
+  FindAlbaPage,
+} from "@components/page";
 
 const initStackflow = () => {
   return stackflow({
     transitionDuration: 350,
     activities: {
-      JobsListPage,
-      JobsArticleDetailPage,
+      ItemDetailPage,
+      ItemUploadPage,
+      ItemListPage,
+      FindAlbaPage,
     },
     plugins: [
       basicRendererPlugin(),
@@ -17,7 +23,7 @@ const initStackflow = () => {
         theme: "cupertino",
       }),
     ],
-    initialActivity: () => "JobsListPage",
+    initialActivity: () => "ItemListPage",
   });
 };
 
