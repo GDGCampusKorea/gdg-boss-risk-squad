@@ -24,9 +24,9 @@ enum TabItems: Int {
     
     var viewController: UIViewController {
         switch self {
-        case .home:     UIViewController()
-        case .recruit:  UIViewController()
-        case .post:     UIViewController()
+        case .home:     HomeViewController()
+        case .recruit:  RecruitListViewController()
+        case .post:     PostCreateViewController()
         }
     }
     
