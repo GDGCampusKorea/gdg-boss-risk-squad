@@ -1,10 +1,10 @@
+import "@styles/globalStyle.ts";
 import "@stackflow/plugin-basic-ui/index.css";
 import "./styles/globalSeedDesign.ts";
 
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.tsx";
-import "./index.css";
 import { server } from "./api/msw/index.ts";
 
 async function initMsw() {
@@ -23,7 +23,7 @@ async function initMsw() {
     ReactDOM.createRoot(rootNode).render(
       <React.StrictMode>
         <App />
-      </React.StrictMode>
+      </React.StrictMode>,
     );
   });
 }
