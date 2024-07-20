@@ -5,8 +5,9 @@ import {
 } from "msw";
 import { ITEM_LIST_URL, ItemListResponse } from "@api/hooks/useGetItemList";
 import { API_ENDPOINT } from "../instance";
+import { NewItem } from "@api/hooks/usePostItem";
 
-export const itemListMockResponse = [
+export const itemListMockResponse: NewItem[] = [
   {
     itemId: "02542470",
     price: 50000,
@@ -91,10 +92,17 @@ export const itemListMockResponse = [
 
 const itemListGet = (statusCode: number, response: ItemListResponse) =>
   mswHttp.get(`${API_ENDPOINT}/${ITEM_LIST_URL}`, () => {
-    // ...and respond to them using this JSON response.
     return mswHttpResponse.json(response, { status: statusCode });
+  });
+
+const itemListPost = (statusCode: number): HttpHandler =>
+  mswHttp.post(`${API_ENDPOINT}/${ITEM_LIST_URL}`, async ({ request }) => {
+    const newItem = (await request.json()) as NewItem;
+    itemListMockResponse.push(newItem);
+    return mswHttpResponse.json(itemListMockResponse, { status: statusCode });
   });
 
 export const itemListHandlers: HttpHandler[] = [
   itemListGet(200, itemListMockResponse),
+  itemListPost(201),
 ];
