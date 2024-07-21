@@ -18,7 +18,7 @@
         tools:targetApi="31"
         >
         <activity
-            android:name="com.gdg.boss.ui.ComposeMainActivity"
+            android:name="com.gdg.boss.presentation.MainActivity"
             android:exported="true"
             android:launchMode="singleTop"
             android:theme="@style/Theme.Gdg">
@@ -27,18 +27,6 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-
-        <activity
-            android:name="com.gdg.boss.ui.XmlMainActivity"
-            android:exported="true"
-            android:launchMode="singleTop"
-            android:theme="@style/Theme.Gdg">
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
-
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
         </activity>
     </application>
 

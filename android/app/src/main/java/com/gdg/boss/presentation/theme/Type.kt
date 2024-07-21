@@ -1,4 +1,4 @@
-package com.gdg.boss.theme
+package com.gdg.boss.presentation.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle
