@@ -1,4 +1,4 @@
-package com.gdg.boss.theme
+package com.gdg.boss.presentation.theme
 
 import android.app.Activity
 import android.os.Build
