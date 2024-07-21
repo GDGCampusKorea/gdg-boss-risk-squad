@@ -29,7 +29,7 @@ export const ItemListPage = () => {
       <AppScreen>
         <Text onClick={() => push("ItemUploadPage", {})}>상품 올리기</Text>
         <Text onClick={() => push("ItemDetailPage", {})}>세부 페이지</Text>
-        <Text onClick={() => handlePostItem(newItem)}>세부 페이지</Text>
+        <Text onClick={() => handlePostItem(newItem)}>추가하기</Text>
       </AppScreen>
     </AsyncBoundary>
   );

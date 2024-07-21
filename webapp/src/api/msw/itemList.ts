@@ -99,7 +99,7 @@ const itemListPost = (statusCode: number): HttpHandler =>
   mswHttp.post(`${API_ENDPOINT}/${ITEM_LIST_URL}`, async ({ request }) => {
     const newItem = (await request.json()) as NewItem;
     itemListMockResponse.push(newItem);
-    return mswHttpResponse.json(itemListMockResponse, { status: statusCode });
+    return mswHttpResponse.json(newItem, { status: statusCode });
   });
 
 export const itemListHandlers: HttpHandler[] = [
