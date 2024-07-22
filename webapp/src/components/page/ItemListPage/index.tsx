@@ -3,6 +3,7 @@ import { NewItem, usePostListItem } from "@api/hooks/usePostItem";
 import { Text } from "@components/common/atoms/Text";
 import AsyncBoundary from "@components/template/AsyncBoundary";
 import { AppScreen } from "@stackflow/plugin-basic-ui";
+import { CardList } from "./components/CardList";
 
 export const ItemListPage = () => {
   const { push } = useFlow();
@@ -27,9 +28,10 @@ export const ItemListPage = () => {
   return (
     <AsyncBoundary>
       <AppScreen>
-        <Text onClick={() => push("ItemUploadPage", {})}>상품 올리기</Text>
+        {/* <Text onClick={() => push("ItemUploadPage", {})}>상품 올리기</Text>
         <Text onClick={() => push("ItemDetailPage", {})}>세부 페이지</Text>
-        <Text onClick={() => handlePostItem(newItem)}>추가하기</Text>
+        <Text onClick={() => handlePostItem(newItem)}>추가하기</Text> */}
+        <CardList />
       </AppScreen>
     </AsyncBoundary>
   );
