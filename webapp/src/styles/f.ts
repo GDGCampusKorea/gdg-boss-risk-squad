@@ -34,11 +34,17 @@ export const PosRel = styled.div`
 `;
 
 export const Top0 = styled.div`
+  position: absolute;
   top: 0;
 `;
 
 export const Left0 = styled.div`
   left: 0;
+`;
+
+export const Bottom0 = styled.div`
+  position: absolute;
+  bottom: 0;
 `;
 
 export const FullWidth = styled.div`
