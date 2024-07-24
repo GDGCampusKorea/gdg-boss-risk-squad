@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { ReactNode, CSSProperties } from "react";
 
 interface FlexProps {
   children: ReactNode;
@@ -9,6 +9,7 @@ interface FlexProps {
   width?: string;
   wrap?: "nowrap" | "wrap" | "wrap-reverse";
   height?: string | number;
+  style?: CSSProperties;
 }
 
 export const Flex = (props: FlexProps) => {
@@ -21,6 +22,8 @@ export const Flex = (props: FlexProps) => {
     width = "100%",
     wrap = "nowrap",
     height = "auto",
+    style,
+    ...rest
   } = props;
 
   return (
@@ -34,6 +37,8 @@ export const Flex = (props: FlexProps) => {
         justifyContent: justify,
         flexDirection: direction,
         flexWrap: wrap,
+        ...style,
+        ...rest
       }}
     >
       {children}
